@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vault!</title>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Hello Vault</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/weather.html">Retrieve Weather</a></li>
+                <li class="active"><a href="/apikey.html">Update API-Key</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div id="apikey" class="form-inline">
+                <input type="text" placeholder="new API Key" class="form-control" />
+                <button type="button" class="btn btn-success">update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/webjars/jquery/3.2.0/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<script src="/js/apikey.js"></script>
+
+</body>
+</html>

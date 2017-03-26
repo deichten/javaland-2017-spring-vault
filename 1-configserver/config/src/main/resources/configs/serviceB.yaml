@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: readonly
+    password: mysecret
+    url: mysql://localhost/database
+
+server:
+  port: 8081
+
+foo:
+  bay: "{cipher}d52336d59de66a58de70e410621ff2a0334a917596293e6dbb94c01c4abb24c6"
+

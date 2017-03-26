@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: root
+    password: toor
+    url: mysql://localhost/database
+
+server:
+  port: 8080
+
+foo:
+  baz: "{cipher}5744be6aa2a9641fac133ff3aaf150372665d599a72dc8a6c77fab079e1a6a57"
+

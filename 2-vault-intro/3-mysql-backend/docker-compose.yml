@@ -1,0 +1,16 @@
+version: '2'
+services:
+  mysql:
+    image: "mysql:latest"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+  vault:
+    image: "vault:latest"
+    links:
+      - mysql
+    ports:
+      - "8200:8200"
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=00000000-0000-0000-0000-000000000000

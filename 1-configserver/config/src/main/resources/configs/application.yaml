@@ -1,0 +1,6 @@
+foo:
+  bar: lsmf
+
+management:
+  security:
+    enabled: false
