@@ -3,11 +3,11 @@
 In this scenario we'll see how dynamic backends will work by showing *Vaults* integration to *MySQL*.
 
 1. Start the scenario with `./start.sh`. This will
-  3. Start the docker containers in the right order and linked to each other so vault can access *MySQL*
-  4. Sleep some time to give mysql the time to spin up correctly
-  5. Mount the MySQL dynamic backend under `mysql/`
-  6. Configure the MySQL connection and lease times
-  7. Create a readonly MySQL role that gets a global `SELECT` grant.
+   1. Start the docker containers in the right order and linked to each other so vault can access *MySQL*
+   1. Sleep some time to give mysql the time to spin up correctly
+   1. Mount the MySQL dynamic backend under `mysql/`
+   1. Configure the MySQL connection and lease times
+   1. Create a readonly MySQL role that gets a global `SELECT` grant.
 1. Set the Vault address and Token
    
    ```
@@ -19,14 +19,14 @@ In this scenario we'll see how dynamic backends will work by showing *Vaults* in
 1. Now you can retrieve credentials by starting and see that *Vault* is returning valid crendentials:
 
    ``` 
-$ vault read mysql/creds/readonly
-Key            	Value
----            	-----
-lease_id       	mysql/creds/readonly/aa88354b-a2dd-c72c-83c5-d9afd71a8164
-lease_duration 	5m0s
-lease_renewable	true
-password       	d6ca28a7-527a-5c5f-12fc-76b86148f309
-username       	read-toke-b8d249
+   $ vault read mysql/creds/readonly
+   Key            	Value
+   ---            	-----
+   lease_id       	mysql/creds/readonly/aa88354b-a2dd-c72c-83c5-d9afd71a8164
+   lease_duration 	5m0s
+   lease_renewable	true
+   password       	d6ca28a7-527a-5c5f-12fc-76b86148f309
+   username       	read-toke-b8d249
 
    ```
 

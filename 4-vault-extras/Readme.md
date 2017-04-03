@@ -15,9 +15,9 @@
 1. Initialize the vault server with keybase.io support by passing in the additional parameters, especially the `-pgp-keys` part.
 
    ```
-$ vault init -key-shares=1 -key-threshold=1 -pgp-keys=keybase:deichten
-Unseal Key 1: wcBMA2tH981VJURsAQgAhRINImppXbCMSc7bUyeHWlEGdhIFq12l+x30DgxYkrzzMaG9sNUFb0+9zA/wwjjoGucX8zP8vdHSJSbGFGPlV159yI8aivOdvjHH1L0XyZhE5bsO+K1E0PFchHTLH3U9dCxOUU1VPD7/l5qcBF31A/j8fLqL2WCSoj49ws3au2/rwvG9eNfZ7rLNEIo93HNTC053gkias5/lXL1mCpVgvMXGmDkPZjE6d9xWLgUziFasVl3lxcWuUeTrelnfU2u/eXMTR06UW/lTrztkVFs+v7VfSEZh0pWkqWOXy7WvrwKRAmkKdXJbiAqrEeed8Dq8buzlvRzVooUo/vxuCFCndNLgAeQMlj8V8ywu1PvbfWum2tEm4Wm04ILgtuGMruA94kh4vM/g7Obxe16XRtsZV5CSppLKear976C/58vy5gxFT/qe65F5B2aINlYGPOA0kGuPh4HnXv8+HBeB865jWtIQpfkxKwyb4PPkSMvM5apwCkXzf4wK81y7tuIBKMqQ4ei4AA==
-Initial Root Token: c001413c-6893-3c02-f077-7f64978ed012
+   $ vault init -key-shares=1 -key-threshold=1 -pgp-keys=keybase:deichten
+   Unseal Key 1: wcBMA2tH981VJURsAQgAhRINImppXbCMSc7bUyeHWlEGdhIFq12l+x30DgxYkrzzMaG9sNUFb0+9zA/wwjjoGucX8zP8vdHSJSbGFGPlV159yI8aivOdvjHH1L0XyZhE5bsO+K1E0PFchHTLH3U9dCxOUU1VPD7/l5qcBF31A/j8fLqL2WCSoj49ws3au2/rwvG9eNfZ7rLNEIo93HNTC053gkias5/lXL1mCpVgvMXGmDkPZjE6d9xWLgUziFasVl3lxcWuUeTrelnfU2u/eXMTR06UW/lTrztkVFs+v7VfSEZh0pWkqWOXy7WvrwKRAmkKdXJbiAqrEeed8Dq8buzlvRzVooUo/vxuCFCndNLgAeQMlj8V8ywu1PvbfWum2tEm4Wm04ILgtuGMruA94kh4vM/g7Obxe16XRtsZV5CSppLKear976C/58vy5gxFT/qe65F5B2aINlYGPOA0kGuPh4HnXv8+HBeB865jWtIQpfkxKwyb4PPkSMvM5apwCkXzf4wK81y7tuIBKMqQ4ei4AA==
+   Initial Root Token: c001413c-6893-3c02-f077-7f64978ed012
 
    Vault initialized with 1 keys and a key threshold of 1. Please
 securely distribute the above keys. When the Vault is re-sealed,
@@ -40,13 +40,13 @@ your Vault will remain permanently sealed.
 1. You can now use the decrypted key to unseal vault
 
    ```
-$ vault unseal 6c75310b71f7059c6af2a…
-Sealed: false
-Key Shares: 1
-Key Threshold: 1
-Unseal Progress: 0
-Unseal Nonce: 
-```
+   $ vault unseal 6c75310b71f7059c6af2a…
+   Sealed: false
+   Key Shares: 1
+   Key Threshold: 1
+   Unseal Progress: 0
+   Unseal Nonce: 
+   ```
 
 1. Set your root token from above initalization process
    
@@ -57,26 +57,25 @@ Unseal Nonce:
 1. Check vault by asking for status or write and read to secret backend
 
    ```
-$ vault status
-Sealed: false
-Key Shares: 1
-Key Threshold: 1
-Unseal Progress: 0
-Unseal Nonce: 
-Version: 0.7.0
-Cluster Name: vault-cluster-dfb03a29
-Cluster ID: 64d28d21-07f3-a1b2-dffc-3c77ff56be13
+   $ vault status
+   Sealed: false
+   Key Shares: 1
+   Key Threshold: 1
+   Unseal Progress: 0
+   Unseal Nonce: 
+   Version: 0.7.0
+   Cluster Name: vault-cluster-dfb03a29
+   Cluster ID: 64d28d21-07f3-a1b2-dffc-3c77ff56be13
 
    High-Availability Enabled: false
    $ vault write secret/myapp foo=bar ttl=24h
    Success! Data written to: secret/myapp
-$ vault read secret/myapp 
-Key             	Value
----             	-----
-refresh_interval	24h0m0s
-foo             	bar
-ttl             	24h
-
+   $ vault read secret/myapp 
+   Key             	Value
+   ---             	-----
+   refresh_interval	24h0m0s
+   foo             	bar
+   ttl             	24h
 
    ```
 1. Don't forget to clean up after you're done with `./stop.sh`
