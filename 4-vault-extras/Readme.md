@@ -20,12 +20,12 @@
    Initial Root Token: c001413c-6893-3c02-f077-7f64978ed012
 
    Vault initialized with 1 keys and a key threshold of 1. Please
-securely distribute the above keys. When the Vault is re-sealed,
-restarted, or stopped, you must provide at least 1 of these keys
-to unseal it again.
+   securely distribute the above keys. When the Vault is re-sealed,
+   restarted, or stopped, you must provide at least 1 of these keys
+   to unseal it again.
 
    Vault does not store the master key. Without at least 1 keys,
-your Vault will remain permanently sealed.
+   your Vault will remain permanently sealed.
    ```
    
    **Note:** we had to reduce the `keys-threshold` here since *Vault* is smart enough to check how many different PGP keys/references you passed in. Since I picked just one here I also had to reduce the amount of keys needed for unsealing.
@@ -34,7 +34,7 @@ your Vault will remain permanently sealed.
 
    ```
    $ echo "wcBMA2tH981VJURsAQg…" | base64 -D | keybase pgp decrpyt
-6c75310b71f7059c6af2a…
+   6c75310b71f7059c6af2a…
    ```
 
 1. You can now use the decrypted key to unseal vault
